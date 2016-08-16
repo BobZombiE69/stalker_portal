@@ -5,7 +5,9 @@
     top: 0;
     width: 1280px;
     height: 720px;
-    background-image: url("i_720/bg.png");
+    /*background-image: url("i_720/bg.png");
+	*/
+	background: #311122 none repeat scroll 0 0;
 }
 
 .main_menu_logo{
@@ -19,14 +21,14 @@
 .main_menu_date{
     font-family: "Roboto", serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     color: #fff;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
 }
 
 .main_menu_time{
     font-weight: bold;
-    font-size: 34px;
+    font-size: 22px;
     color: #fff;
     margin-left: 12px;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
@@ -36,19 +38,19 @@
 
 .main_menu_date_bar{
     position: absolute;
-    width: 600px;
-    top: 38px;
+    width: 240px;
+    top: 15px;
     right: 0;
     font-family: "Roboto", sans-serif;
     text-align: right;
-    padding-right: 65px;
+    padding-right: 15px;
 }
 
 .mm_menu_hor{
     position: absolute;
     width: 1140px;
     height: 210px;
-    bottom: 60px;
+    bottom: -60px;
     padding: 0 70px 0 70px;
 }
 
@@ -56,8 +58,8 @@
     position: absolute;
     width: 320px;
     height: 210px;
-    bottom: 74px;
-    left: -10px;
+    bottom: -30px;
+    left: -40px;
     background: url(i_720/mm_hor_left.png);
 }
 
@@ -65,16 +67,17 @@
     position: absolute;
     width: 320px;
     height: 210px;
-    bottom: 74px;
-    right: -10px;
+    bottom: -30px;
+    right: -40px;
     background: url(i_720/mm_hor_right.png);
 }
 
 .menu_hor_cell{
     float: left;
-    width: 360px;
+    /*width: 360px;
+	*/
     height: 210px;
-    font: 26px "Roboto";
+    font: 24px "Roboto";
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -91,9 +94,9 @@
 
 .menu_hor_cell_act{
     float: left;
-    width: 360px;
-    height: 210px;
-    font: 30px "Roboto";
+    width: 220px;
+    height: 135px;
+    font: 28px "Roboto";
     font-weight: bold;
     color: #fff;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
@@ -105,42 +108,45 @@
 }
 
 .menu_hor_cell_img{
-    width: 360px;
-    height: 160px;
+    width: 215px;
+    /*height: 160px;
+	*/
 }
 
 .mm_menu_vert_empty{
     position: absolute;
     background: url(i_720/mm_hor_bg2.png) no-repeat;
-    width: 390px;
+    width: 250px;
     height: 15px;
-    bottom: 270px;
-    left: 445px;
+    bottom: 150px;
+    left: 515px;
 }
 
 .mm_menu_vert{
     position: absolute;
-    width: 390px;
-    bottom: 270px;
-    left: 445px;
+    width: 250px;
+    bottom: 150px;
+    left: 515px;
 }
 
 .mm_menu_vert_bottom{
     height: 50px;
-    width: 390px;
+    width: 250px;
     background: url(i_720/mm_hor_bg3.png) bottom;
 }
 
 .mm_menu_vert_body{
-    width: 390px;
+    width: 250px;
     background: url(i_720/mm_hor_bg3.png) top;
     padding-top: 33px;
 }
 
 .mm_menu_vert_body .mm_vert_container div{
-    height: 38px;
-    width: 356px;
-    font: 26px "Roboto";
+    /*height: 38px;
+	*/
+    /*width: 356px;
+	*/
+    font: 20px "Roboto";
     color: #ffffff;
     text-transform: uppercase;
     text-shadow:  rgba(0, 50, 80, 0.5) 1px 2px 0;
@@ -148,7 +154,7 @@
     /*margin-left: 14px;*/
     /*padding-left: 14px;
     padding-top: 8px;*/
-    padding: 3px 0 5px 34px;
+    padding: 3px 34px 0px 14px;
     overflow: hidden;
     white-space: pre;
     text-overflow: ellipsis;
@@ -169,8 +175,8 @@
 {
     position: absolute;
     right: 70px;
-    bottom: 30px;
-    font-size: 22px  !important;
+    bottom: 0px;
+    font-size: 12px  !important;
     color: #ccd6de  !important;
 }
 /* END MAIN MENU */

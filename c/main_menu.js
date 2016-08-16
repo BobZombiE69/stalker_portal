@@ -103,10 +103,15 @@ var main_menu = {
 
         this.main_menu_date_bar = create_block_element('main_menu_date_bar', this.dom_obj);
         
-        this.date = create_inline_element('main_menu_date' ,this.main_menu_date_bar);
+        //Bobi - change SPAN to DIV
+		//this.date = create_inline_element('main_menu_date' ,this.main_menu_date_bar);
         
-        this.time = create_inline_element('main_menu_time' ,this.main_menu_date_bar);
+        //this.time = create_inline_element('main_menu_time' ,this.main_menu_date_bar);
         
+		this.date = create_block_element('main_menu_date' ,this.main_menu_date_bar);
+        
+        this.time = create_block_element('main_menu_time' ,this.main_menu_date_bar);
+		
         //this.cur_weather = create_block_element('main_menu_cur_weather', this.dom_obj);
         
         var main_menu_ver = create_block_element('main_menu_ver', this.dom_obj);
@@ -119,12 +124,12 @@ var main_menu = {
         var mm_menu_hor = create_block_element('mm_menu_hor', this.dom_obj);
 
         var cell;
-        
-        for (var i=0; i<=2; i++){
+        //Bobi horizental main menu items
+        for (var i=0; i<=4; i++){ //Bobi horizental main menu items
             
             var style_class = 'menu_hor_cell';
-            
-            if (i == 1){
+            //Bobi main menu active item
+            if (i == 2){ //Bobi main menu active item
                 style_class = 'menu_hor_cell_act';
             }
             
@@ -247,8 +252,8 @@ var main_menu = {
         this.set_focused_module();
         
         for(var i=0; i<this.map.length; i++){
-            
-            if (i<3){
+            //Bobi Horizental main menu 5 items
+            if (i<5){ //Bobi Horizental main menu 5 items
 
                 var img = new Image();
                 img.src = this.map[i].img;

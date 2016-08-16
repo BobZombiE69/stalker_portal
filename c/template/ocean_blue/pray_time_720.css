@@ -1,0 +1,71 @@
+.oghat_block {
+    position: absolute;
+    left: 30px;
+    top : 30px;
+    width: 300px;
+    /*
+	height: 82px;
+    */
+	color: #fff;
+    /* 
+	background-image: url("i_720/25alfa_20.png");
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 0 0 5px 0;
+	*/
+	font-family: Tahoma;
+    font-size: 14px;
+    text-align: center;
+	text-decoration: none;
+/*  text-shadow: #000 0 -1px 0;
+*/
+}
+
+
+.oghat_block .title {
+    background-color: #224675;
+    color: #eaae01;
+    direction: rtl;
+/*    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+*/    
+	padding: 15px;
+	border-radius: 15px;
+	overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+
+
+.oghat_block .descr{
+    white-space: pre;
+    overflow: hidden;
+    margin: 0 5px;
+    text-overflow: ellipsis;
+	background-color: #334f69;
+	direction: rtl;
+}
+
+p {
+	font-family: Tahoma;
+	font-size: 14px;
+	text-overflow: ellipsis;
+}
+
+
+#sar_titr {
+    background: #111 none repeat scroll 0 0;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+
+#news_list {
+	padding-right: 15px;
+	border: 1px;
+}

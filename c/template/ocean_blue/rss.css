@@ -1,0 +1,34 @@
+.rss_block{
+    position: absolute;
+    left: 30px;
+    top : 160px;
+    width: 330px;
+    /*
+	height: 68px;
+	*/
+    color: #fff;
+    text-shadow: #000 0 -1px 0;
+    /*
+	background-image: url("i/25alfa_20.png");
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 0 0 3px 0;
+	*/
+	font-family: tahoma;
+    font-size: 11px;
+    text-align: center;
+}
+
+.rss_block .title{
+    white-space: pre;
+    overflow: hidden;
+    margin: 0 5px;
+    text-overflow: ellipsis;
+}
+
+.rss_block .descr{
+    white-space: pre;
+    overflow: hidden;
+    margin: 0 5px;
+    text-overflow: ellipsis;
+}
