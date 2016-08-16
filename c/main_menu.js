@@ -306,8 +306,8 @@ var main_menu = {
     
     render : function(){
         _debug('main_menu.render');
-        
-        for (var i=0; i<=2; i++){
+        //Bobi - change for horizental main menu 5 items
+        for (var i=0; i<=4; i++){
 
             var img = new Image();
             img.src = this.map[i].img;

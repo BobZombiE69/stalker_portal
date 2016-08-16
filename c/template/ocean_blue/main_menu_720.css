@@ -21,14 +21,14 @@
 .main_menu_date{
     font-family: "Roboto", serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
 }
 
 .main_menu_time{
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     color: #fff;
     margin-left: 12px;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
