@@ -1,3 +1,27 @@
+//Bobi - This file modified for 5 items in the horizental main menu
+
+// Number of items in the horizental bottom main_menu
+// Default was 3  
+
+// Middle item , active item in horizental_main_menu
+// if main menu horizental line hast 5 items , then active item will be 2
+// Default was 1
+
+// The order of mudules in custom.ini or server.ini is important !!!!!
+// If there are 3 horizental item in main menu , and you want TV module in center , then TV_Module should be the 2'nd module in custom.ini
+// Like this Example in custome.ini
+//[subscription]
+//all_modules[] = media_browser
+//all_modules[] = tv
+//all_modules[] = vclub
+
+// If there are 5 horizental item in main menu , and you want TV module in center , then TV_Module should be the 3'rd module in custom.ini
+// Like this Example in custome.ini
+//[subscription]
+//all_modules[] = media_browser
+//all_modules[] = vclub
+//all_modules[] = tv
+
 var main_menu = {
     
     on : true,
@@ -21,7 +45,7 @@ var main_menu = {
         
         module.curweather && module.curweather.current && module.curweather.render();
 
-        var layer_name = (this.map.length >=1 && this.map[1].module && this.map[1].module.layer_name) ? this.map[1].module.layer_name: null;
+        var layer_name = (this.map.length >=1 && this.map[mm_hor_actv].module && this.map[mm_hor_actv].module.layer_name) ? this.map[mm_hor_actv].module.layer_name: null;
         this.triggerCustomEventListener('mainmenushow', layer_name);
     },
     
@@ -41,7 +65,7 @@ var main_menu = {
             this.sub_menu_hide();
             var mapLength = this.map.length;
             stb.player.stop();
-            while(this.map[1] && this.map[1].module.layer_name != focus_module && mapLength != 0) {
+            while(this.map[mm_hor_actv] && this.map[mm_hor_actv].module.layer_name != focus_module && mapLength != 0) {
                 this.map.push(this.map.shift());
                 if (mapLength) {
                     mapLength--;
@@ -80,6 +104,7 @@ var main_menu = {
             }
 
             _debug('stb.player.channels', stb.player.channels);
+			//Bobi ??
             if (stb.player.channels && stb.player.channels.length>0 && module.tv){
                 this.hide();
                 if (module && module.tv){
@@ -125,11 +150,11 @@ var main_menu = {
 
         var cell;
         //Bobi horizental main menu items
-        for (var i=0; i<=4; i++){ //Bobi horizental main menu items
+        for (var i=0; i<mm_hor_items; i++){ 
             
             var style_class = 'menu_hor_cell';
             //Bobi main menu active item
-            if (i == 2){ //Bobi main menu active item
+            if (i == mm_hor_actv){ 
                 style_class = 'menu_hor_cell_act';
             }
             
@@ -253,7 +278,7 @@ var main_menu = {
         
         for(var i=0; i<this.map.length; i++){
             //Bobi Horizental main menu 5 items
-            if (i<5){ //Bobi Horizental main menu 5 items
+            if (i<mm_hor_items){ 
 
                 var img = new Image();
                 img.src = this.map[i].img;
@@ -284,10 +309,10 @@ var main_menu = {
                     }
                 }
             }
-            
-            if (i != 1){
+            //Bobi ?????
+            if (i != mm_hor_actv){
                 this.map[i].sub_obj.hide();
-            }else if (i == 1){
+            }else if (i == mm_hor_actv){
                 if (this.map[i].sub.length > 0){
                     this.sub_menu_show();
                 }else{
@@ -297,8 +322,8 @@ var main_menu = {
 
         }
         
-        if(this.map[1]){
-            this.active_sub = this.map[1].active_sub;
+        if(this.map[mm_hor_actv]){
+            this.active_sub = this.map[mm_hor_actv].active_sub;
         }
         
         _debug('this.active_sub', this.active_sub);
@@ -307,7 +332,7 @@ var main_menu = {
     render : function(){
         _debug('main_menu.render');
         //Bobi - change for horizental main menu 5 items
-        for (var i=0; i<=4; i++){
+        for (var i=0; i<mm_hor_items; i++){
 
             var img = new Image();
             img.src = this.map[i].img;
@@ -334,17 +359,17 @@ var main_menu = {
     
     sub_menu_hide : function(){
         
-        if(this.map[1] && this.map[1].sub_obj && this.map[1].sub_obj.hide){
-            this.map[1].sub_obj.hide();
+        if(this.map[mm_hor_actv] && this.map[mm_hor_actv].sub_obj && this.map[mm_hor_actv].sub_obj.hide){
+            this.map[mm_hor_actv].sub_obj.hide();
             this.mm_menu_vert.hide();
             this.empty_vert_menu.show();
         }
     },
     
     sub_menu_show : function(){
-        if (this.map.hasOwnProperty(1) && this.map[1].sub.length > 0){
-            this.map[1] && this.map[1].sub_obj && this.map[1].sub_obj.show();
-            this.active_sub = this.map[1].active_sub;
+        if (this.map.hasOwnProperty(mm_hor_actv) && this.map[mm_hor_actv].sub.length > 0){
+            this.map[mm_hor_actv] && this.map[mm_hor_actv].sub_obj && this.map[mm_hor_actv].sub_obj.show();
+            this.active_sub = this.map[mm_hor_actv].active_sub;
             this.mm_menu_vert.show();
             this.empty_vert_menu.hide();
         }
@@ -367,14 +392,14 @@ var main_menu = {
     
     vshift : function(dir){
         if (dir > 0){
-            if (this.map[1].sub.length > 0){
-                this.map[1].sub.push(this.map[1].sub.shift());
+            if (this.map[mm_hor_actv].sub.length > 0){
+                this.map[mm_hor_actv].sub.push(this.map[mm_hor_actv].sub.shift());
             }
         }else{
-            var menu_length = this.map[1].sub.length;
+            var menu_length = this.map[mm_hor_actv].sub.length;
             if (menu_length > 0){
-                this.map[1].sub.unshift(this.map[1].sub[menu_length-1]);
-                this.map[1].sub.splice(menu_length, 1);
+                this.map[mm_hor_actv].sub.unshift(this.map[mm_hor_actv].sub[menu_length-1]);
+                this.map[mm_hor_actv].sub.splice(menu_length, 1);
             }
         }
         this.render_sub();
@@ -382,17 +407,17 @@ var main_menu = {
     
     page_shift : function(dir){
         if (dir){
-            if (this.map[1].sub.length > 0){
+            if (this.map[mm_hor_actv].sub.length > 0){
                 for (var i=0; i<=6; i++){
-                    this.map[1].sub.push(this.map[1].sub.shift());
+                    this.map[mm_hor_actv].sub.push(this.map[mm_hor_actv].sub.shift());
                 }
             }
         }else{
-            var menu_length = this.map[1].sub.length;
+            var menu_length = this.map[mm_hor_actv].sub.length;
             if (menu_length > 0){
                 for (i=0; i<=6; i++){
-                    this.map[1].sub.unshift(this.map[1].sub[menu_length-1]);
-                    this.map[1].sub.splice(menu_length, 1);
+                    this.map[mm_hor_actv].sub.unshift(this.map[mm_hor_actv].sub[menu_length-1]);
+                    this.map[mm_hor_actv].sub.splice(menu_length, 1);
                 }
             }
         }
@@ -413,10 +438,10 @@ var main_menu = {
         
         _debug('this.active_sub', this.active_sub);
         
-        for (var i=0; i<this.map[1].sub.length; i++){
+        for (var i=0; i<this.map[mm_hor_actv].sub.length; i++){
             
             if (i<6){
-                this.map[1].sub_items_dom_obj[i].innerHTML = this.map[1].sub[i].title;
+                this.map[mm_hor_actv].sub_items_dom_obj[i].innerHTML = this.map[mm_hor_actv].sub[i].title;
             }
             
             /*if (i == this.active_sub){
@@ -429,23 +454,23 @@ var main_menu = {
         _debug('main_menu.action');
         
         _debug('this.active_sub', this.active_sub);
-        if (stb.is_restricted_module(this.map[1].module)){
+        if (stb.is_restricted_module(this.map[mm_hor_actv].module)){
             stb.notice.show(get_word('msg_service_off'));
             return;
         }
         
-        if (this.map[1].sub && this.map[1].sub[this.active_sub] && typeof(this.map[1].sub[this.active_sub].cmd) == 'object'){
+        if (this.map[mm_hor_actv].sub && this.map[mm_hor_actv].sub[this.active_sub] && typeof(this.map[mm_hor_actv].sub[this.active_sub].cmd) == 'object'){
             
-            var context = this.map[1].sub[this.active_sub].cmd.context || window;
+            var context = this.map[mm_hor_actv].sub[this.active_sub].cmd.context || window;
             
-            this.map[1].sub[this.active_sub].cmd.func.apply(context, this.map[1].sub[this.active_sub].cmd.args);
+            this.map[mm_hor_actv].sub[this.active_sub].cmd.func.apply(context, this.map[mm_hor_actv].sub[this.active_sub].cmd.args);
             
-        }else if (this.map[1].sub && this.map[1].sub[this.active_sub] && typeof(this.map[1].sub[this.active_sub].cmd) == 'function'){
-            this.map[1].sub[this.active_sub].cmd();
-        }else if (this.map[1].sub && this.map[1].sub[this.active_sub] && typeof(this.map[1].sub[this.active_sub].cmd) == 'string'){
-            eval(this.map[1].sub[this.active_sub].cmd);
+        }else if (this.map[mm_hor_actv].sub && this.map[mm_hor_actv].sub[this.active_sub] && typeof(this.map[mm_hor_actv].sub[this.active_sub].cmd) == 'function'){
+            this.map[mm_hor_actv].sub[this.active_sub].cmd();
+        }else if (this.map[mm_hor_actv].sub && this.map[mm_hor_actv].sub[this.active_sub] && typeof(this.map[mm_hor_actv].sub[this.active_sub].cmd) == 'string'){
+            eval(this.map[mm_hor_actv].sub[this.active_sub].cmd);
         }else{
-            this.map[1].cmd();
+            this.map[mm_hor_actv].cmd();
         }
     },
     
@@ -453,7 +478,8 @@ var main_menu = {
         _debug('clear_menu');
         
         try{
-            for (var i=0; i<=2; i++){
+			//Bobi - 
+            for (var i=0; i<mm_hor_items; i++){
                 this.cells[i].img_dom_obj.innerHTML = '';
                 this.cells[i].title_dom_obj.innerHTML = '';
             }
@@ -487,7 +513,8 @@ var main_menu = {
         img = img.replace('{0}', resolution);
 
         _debug('img', img);
-
+		
+		//Bobi ??
         if (sub.length > 0){
             for (var k=1; k<3; k++){
                 sub.unshift(sub.pop());
@@ -524,6 +551,15 @@ var main_menu = {
         }
     }
 };
+
+// Bobi - Number of items in the horizental bottom main_menu
+// Default was 3
+mm_hor_items = 5;  
+
+// Bobi - middle item , active item in horizental_main_menu
+// if main menu horizental line hast 5 items , then active item will be 2
+// Default was 1
+mm_hor_actv = 2;   
 
 main_menu.init();
 
