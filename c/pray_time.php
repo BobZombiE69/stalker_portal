@@ -23,17 +23,17 @@
 
     $prayTime->setCalcMethod($prayTime->Tehran);
     $times = $prayTime->getPrayerTimes(time(), 26, 54, 4.5);
-    print('   Fajr    = '. $times[0]);
+    print('Fajr: '. $times[0]);
 
     //print('Sunrise = '. $times[1]);
 
-    print('   Dhur    = '. $times[2]);
+    print('<br>Dhur: '. $times[2]);
 
     //print('Asr     = '. $times[3]);
 
     //print('Sunset  = '. $times[4]);
 
-    print('   Maghrib = '. $times[5]);
+    print('<br>Maghrib: '. $times[5]);
 
     //print('Isha    = '. $times[6]);
 

@@ -28,7 +28,7 @@
 
 .main_menu_time{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
     margin-left: 12px;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
@@ -96,7 +96,7 @@
     float: left;
     width: 220px;
     height: 135px;
-    font: 28px "Roboto";
+    font: 26px "Roboto";
     font-weight: bold;
     color: #fff;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;

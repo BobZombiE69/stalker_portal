@@ -3,7 +3,7 @@
         dom_obj : {},
         init : function(){
             this.dom_obj = create_block_element('oghat_block', main_menu.dom_obj);
-			console.log('testing...' + this.dom_obj);
+			//console.log('testing...' + this.dom_obj);
  			this.dom_obj.show();
             this.start_load();
         },

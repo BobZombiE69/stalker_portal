@@ -1,20 +1,35 @@
 .curweather_block{
     position: absolute;
-    right: 60px;
-    top : 135px;
-    width: 293px;
+    right: 290px;
+    top : 5px;
+    width: 250px;
     color: #fff;
     text-shadow: rgba(0, 50, 80, 0.5) 1px 2px 0;
-    font-size: 24px;
+    font-size: 18px;
     text-align: left;
 }
 
 .curweather_block .city{
-    display: none;
+    display: block;
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 5px;
+    /*right: 4px;
+	*/
+	font-size: 26px;
+	font-weight: bold;
     font-family: "Roboto", sans-serif;
+}
+
+.curweather_block .temprature{
+    display: block;
+    position: absolute;
+    top: 5px;
+	right: 115px;
+    /*right: 4px;
+	*/
+	font-size: 26px;
+	font-weight: bold;
+    font-family: "Roboto", sans-serif;	
 }
 
 .curweather_block .curweather_img{
@@ -24,13 +39,15 @@
 }
 
 .curweather_block .curweather_descr{
-    margin: 85px 0 0 0;
+    margin: 45px 0 0 0;
     padding: 0 0 8px 8px;
-    text-align: right;
+    /*text-align: right;
+	*/
 }
 
 .curweather_block .curweather_wind{
-    float: right;
+    /*float: right;
+	*/
 }
 
 .curweather_block .curweather_title{
