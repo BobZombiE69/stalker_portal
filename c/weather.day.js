@@ -133,8 +133,12 @@
                 this.map[i].descr.innerHTML = descr;
 
                 this.map[i].layer_1.src = 'template/' + loader.template + '/i' + resolution_prefix + '/' + data[i].pict;
-
-                this.map[i].temp.innerHTML = data[i].temperature;
+				//Bobi
+				//var tempr1 = data[i].temperature;
+				var temp_arr = data[i].temperature.split("..");
+				//console.log(temp_arr[1]);
+				this.map[i].temp.innerHTML = temp_arr[1];
+                //this.map[i].temp.innerHTML = data[i].temperature;
             }
         };
 
